@@ -9,17 +9,28 @@ Depending on the selected options, it can output the number of entanglements, th
 `FTPPA Dump filename Keyword value Args`
 
 - filename = file name
-- one or more keyword/value pairs may be appended
- 
-  Keyword = AInfo/TChain/TAtom/TwoChain
 
-    TChain values = mol_ID
+- Keyword = *AInfo* or *TChain* or *TAtom* or *TwoChain*
+     
+    - *AInfo*  values = none
+     
+    - *TChain* values = mol_ID
     
-    TAtom  values = mol_ID atom_ID r_cut
+    - *TAtom*   values = mol_ID Astart Astop r_cut
 
+    - *TwoChain* values = mol_ID1, mol_ID2, mol_ID3
+
+- Args = *NC* or *extend* or *format*
+    - *NC*  values = chain length
+    - *extend* values = mol_ID
+    - *format* values = data, dump, cfg
 ## Examples
 ```text
-A
+FTPPA Dump -h
+FTPPA Dump AInfo NC 300
+FTPPA Dump dump.PPA_0 TChain 1
+FTPPA Dump dump.PPA_0 TAtom  1 94 99 1.11246  NC 300
+FTPPA Dump dump.PPA_* TwoChain 1 471
 ```
 ## Description
 
