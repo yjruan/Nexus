@@ -10,11 +10,12 @@ Depending on the selected options, it can output the number of entanglements, th
 
 - filename = file name
 - one or more keyword/value pairs may be appended
+ 
+  Keyword = AInfo/TChain/TAtom/TwoChain
 
-<div style="background-color:#f6f8fa; padding:12px; border:1px solid #d0d7de;">
-keyword = AInfo/TChain/TAtom/TwoChain
-</div>
-
+    TChain values = mol_ID
+    
+    TAtom  values = mol_ID atom_ID r_cut
 
 ## Examples
 ```text
