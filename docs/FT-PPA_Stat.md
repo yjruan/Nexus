@@ -20,11 +20,8 @@
 
 ## Examples
 ```text
-FTPPA Dump -h
-FTPPA Dump AInfo NC 300
-FTPPA Dump dump.PPA_0 TChain 1
-FTPPA Dump dump.PPA_0 TAtom  1 94 99 1.11246  NC 300
-FTPPA Dump dump.PPA_* TwoChain 1 471
+FTPPA Stat dump.PPA_0 EnNum NC  300"
+FTPPA Stat dump.PPA_* EnPos
 ```
 ## Description
 
