@@ -2,7 +2,9 @@
 
 ## Description
 This module performs the `FT-PPA` algorithm to analyze the primitive paths of polymer chains and calculate entanglement properties. 
-More details about this method can be found in Ref [1](https://doi.org/10.1021/acs.macromol.3c02054). This method consists of two steps: 1) obtaining a smooth primitive path; 2) conducting primitive path analysis using the Frenet trihedron. 
+More details about this method can be found in Ref [1](https://doi.org/10.1021/acs.macromol.3c02054). This method consists of two steps: 1) obtaining a smooth primitive path; 2) conducting primitive path analysis using the Frenet trihedron.
+Briefly, FT-PPA identifies local high-curvature segments, termed kinks, along the primitive chain path. 
+An entanglement (Ent) is then assigned when two kinks are spatially close and exhibit opposite curvature directions.
 At the current stage, FTPPA only processes energy minimization configurations of Kremer–Grest model.<sup>2</sup>
 Users need to prepare and provide these configurations as input files.
 
