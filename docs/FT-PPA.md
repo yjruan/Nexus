@@ -5,6 +5,27 @@ Depending on the selected options, it can output the number of entanglements, th
 
 ## Syntax
 
-```text
-FTPPA Dump filename KEYWORD value [NC value] [CenMove]
 
+`FTPPA Dump filename Keyword value Args`
+
+- filename = file name
+- one or more keyword/value pairs may be appended
+
+<div style="background-color:#f6f8fa; padding:12px; border:1px solid #d0d7de;">
+keyword = AInfo/TChain/TAtom/TwoChain
+</div>
+
+
+## Examples
+```text
+A
+```
+## Description
+
+AInfo     : Dump \kappa and x,y,z of all monomer'&
+
+TChain    : Dump Target chain, and around kinks'&
+
+TAtom     : Dump Targer Atom, and around monomers'&
+
+TwoChain  : Dump two or more chains',&
