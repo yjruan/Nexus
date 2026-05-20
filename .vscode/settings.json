@@ -1,9 +1,6 @@
 {
-    "cSpell.words": [
-        "Astart",
-        "Astop",
-        "FTPPA",
-        "Targer"
-    ],
-    "cSpell.enabled": true
+    "cSpell.ignoreWords": [
+        "FTPPA"
+        "LAMMPS"
+    ]
 }
