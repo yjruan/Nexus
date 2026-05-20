@@ -20,10 +20,12 @@ Depending on the selected options, it can output the number of entanglements, th
 
     - *TwoChain* values = mol_ID1, mol_ID2, mol_ID3
 
-- Args = *NC* or *extend* or *format*
-    - *NC*  values = chain length
-    - *extend* values = mol_ID
+- Args = *format* or *NC* or *extend* or *CenMove*
     - *format* values = data, dump, cfg
+    - *NC*  values = chain length
+    - *extend* values = value
+    - *CenMove* values = none
+
 ## Examples
 ```text
 FTPPA Dump -h
@@ -34,10 +36,4 @@ FTPPA Dump dump.PPA_* TwoChain 1 471
 ```
 ## Description
 
-AInfo     : Dump \kappa and x,y,z of all monomer'&
-
-TChain    : Dump Target chain, and around kinks'&
-
-TAtom     : Dump Targer Atom, and around monomers'&
-
-TwoChain  : Dump two or more chains',&
+Doing...
