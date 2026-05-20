@@ -8,9 +8,9 @@ Users need to prepare and provide these configurations as input files.
 
 
 The FTPPA styles include two main commands: 
-- the [`FTPPA Stat`](docs/FT-PPA_Stat.md), statistical properties of entanglements
+- the [`FTPPA Stat`](FT-PPA_Stat.md), statistical properties of entanglements
 
-- the [`FTPPA Dump`](docs/FT-PPA_Dump.md), visualization conformations of entanglements.
+- the [`FTPPA Dump`](FT-PPA_Dump.md), visualization conformations of entanglements.
 
 
 
