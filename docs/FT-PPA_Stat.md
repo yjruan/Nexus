@@ -24,5 +24,5 @@ FTPPA Stat dump.PPA_0 EnNum NC  300"
 FTPPA Stat dump.PPA_* EnPos
 ```
 ## Description
+The `FTPPA Stat` command performs FT-PPA on primitive chain conformations and outputs statistical information of entanglements, such as the entanglement number per chain and the spatial distribution of entanglement.
 
-Doing...
