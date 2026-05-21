@@ -13,7 +13,7 @@ FT-PPA is an analysis of primitive paths for entangled polymers based on combini
 geometric analysis. 
 More details about this method can be found in Macromolecules 2024, 57, 2792.
 
-However, I have no time to add all **Error** or **WARNING** message in program when you use some *illegal* parameters.
+However, I have no time to add all **Error** or **WARNING** message in program.
 Users are welcome to try this program and provide feedback. 
 Any comments or suggestions will be greatly appreciated, and the program will be continuously improved in future updates.
 If possible, please cite Macromolecules 2024, 57, 2792.
