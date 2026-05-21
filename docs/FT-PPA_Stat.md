@@ -17,13 +17,15 @@
     - *EnID*  = Atom IDs of the two entangled chain segments
 
 - Args = *format* or *NC*
-    - *format* values = data, dump, cfg
-    - *NC*    values = chain length
+    - *format*  = data, dump, cfg
+    - *NC*      = chain length
+    - *dir*     = x,y,z
+    - *frac*    = bin number
 
 ## Examples
 ```text
 FTPPA Stat dump.PPA_0 EnNum NC  300"
-FTPPA Stat dump.PPA_* EnPos
+FTPPA Stat dump.PPA_* EnPos format cfg
 ```
 ## Description
 The `FTPPA Stat` command performs FT-PPA on primitive chain conformations and outputs statistical information of entanglements, such as the entanglement number per chain and the spatial distribution of entanglement.
@@ -57,7 +59,8 @@ As a result, the kink number per chain and the entanglement number per chain are
 ---
 `EnPos` will output the wrapped position of all entanglements, defined as the centers of mass of the corresponding kink pairs, to a file named `EnPos`.
 Users can further analyze the spatial distribution of entanglements using their own post-processing code.
-The output file is written in the LAMMPS full data format. The atom information is defined as follows:
+The output file is written in the LAMMPS full data format. 
+The atom information is defined as follows:
 
 | Field | Description |
 |---|---|
@@ -68,6 +71,18 @@ The output file is written in the LAMMPS full data format. The atom information 
 | `x` | x coordinate |
 | `y` | y coordinate |
 | `z` | z coordinate |
+
+---
+`EnDis` counts the entanglement number in bins along the `dir` direction.
+This option can be used to examine the spatial distribution of entanglements.
+The output file, named EnDis, with columns are `High`, `Z(y)`, and `Z(y)/Z-1`.
+The output file is named `EnDis`. The columns of the output file are defined as follows:
+
+| Header | Description |
+|---|---|
+| `High` | Bin position |
+| `Z(y)` | entanglement number per chain in the bin |
+| `Z(y)/Z - 1` | Relative deviation from the average |
 
 ---
 `EnID` will outputs the starting and ending atom IDs of the two kink segments associated with each entanglement, to a file named `EnID.DAT`.
@@ -83,7 +98,15 @@ The columns in the output file are `EnID`, `Chain1`, `Atom`, `Atom`, `Chain2`, `
 | `Atom` | Starting atom ID of the second kink segment |
 | `Atom` | Ending atom ID of the second kink segment |
 
+---
+`format` specify the format of the input file. Supported formats are LAMMPS data files (`data`), LAMMPS dump files (`dump`), and CFG files (`cfg`).
+If your CFG file cannot be read correctly, please contact us with the file format details, and we will try to improve the program accordingly.
 
+`NC` specify the polymer chain length. 
+If the input `dump` or `cfg` file does not contain `mol_ID` information, the system is assumed to be monodisperse, and chain identities are assigned based on `NC`.
+
+`dir`   = x,y,z
+    - *frac*    = bin number
 
 ## Default
 format = dump, NC = 0
