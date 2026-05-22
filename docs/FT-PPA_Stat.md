@@ -9,13 +9,14 @@
 - Keyword = *EnNum* or *EnPos* or *EnDis* or *EnID*
      
     - *EnNum* = Kink Number and Ent Number per chain
-     
+
     - *EnPos* = Ent wrapped position (center of two kinks) in space
     
     - *EnDis* = Ent Distribution along target direction
 
     - *EnID*  = Atom IDs of the two entangled chain segments
 
+    - *ConLen*= Contour length of primitive chain
 - Args = *format* or *NC*
     - *format*  = data, dump, cfg
     - *NC*      = chain length
@@ -76,7 +77,6 @@ The atom information is defined as follows:
 `EnDis` counts the entanglement number in bins along the `dir` direction.
 This option can be used to examine the spatial distribution of entanglements.
 The output file, named EnDis, with columns are `High`, `Z(y)`, and `Z(y)/Z-1`.
-The output file is named `EnDis`. The columns of the output file are defined as follows:
 
 | Header | Description |
 |---|---|
@@ -97,6 +97,15 @@ The columns in the output file are `EnID`, `Chain1`, `Atom`, `Atom`, `Chain2`, `
 | `Chain2` | Chain ID of the second kink segment |
 | `Atom` | Starting atom ID of the second kink segment |
 | `Atom` | Ending atom ID of the second kink segment |
+
+---
+`ConLen` will outputs the contour length of primitive chain.
+Here, the contour length is defined as the length of the path connecting the chain-end monomers and the centers of mass of the entanglements, where each entanglement is represented by a pair of kinks.
+The output file, named ConLen, with columns are `Num` and `ConLen1`.
+| Column | Description |
+|---|---|
+| `Num` | File index |
+| `ConLen1` | contour length |
 
 ---
 `format` specify the format of the input file. Supported formats are LAMMPS data files (`data`), LAMMPS dump files (`dump`), and CFG files (`cfg`).
