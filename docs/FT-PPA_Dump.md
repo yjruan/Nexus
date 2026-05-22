@@ -46,7 +46,7 @@ For example, `dump.PPA_*` can match files such as:
 `dump.PPA_0`, `dump.PPA_1`, `dump.PPA_2`, but not filenames with zero-padded indices such as: `dump.PPA_01`, `dump.PPA_02`.
 
 ---
-`AInfo` will outputs the atom ID, molecular ID, atom type, curvature value, and the `x`, `y`, and `z` coordinates of each monomer.
+`AInfo` outputs the atom ID, molecular ID, atom type, curvature value, and the `x`, `y`, and `z` coordinates of each monomer.
 The output file is written in the LAMMPS `full` data format. 
 In this file, the `charge` field is used to represent the curvature value. 
 Atom type `1` represents a monomer that does not form a kink, while atom type `2` represents a monomer belonging to a kink segment.
@@ -59,3 +59,9 @@ Atom types `1` and `2` represent non-kink and kink monomers in chain *mol_ID*, r
 Atom type `3` represents an entangled segment from another chain. 
 If the *extend* argument is not `0`, the entangled segment is further extended by the specified number of monomers, and these additional monomers are assigned atom type `4`.
 The output file can be loaded into visualization software such as OVITO, allowing users to conveniently identify which polymer chains are entangled with chain *mol_ID*.
+
+---
+`TwoChain` outputs the configurations of multiple selected chains, such as *mol_ID1*, *mol_ID2*, and so on. 
+The output file is written in the LAMMPS `full` data format, where the `charge` field represents the curvature value. 
+Atom types are assigned sequentially: types `1` and `2` represent non-kink and kink monomers in chain *mol_ID1*, types `3` and `4` represent non-kink and kink monomers in chain *mol_ID2*, and so forth. 
+The file can be loaded into visualization software such as OVITO to inspect the spatial relationships among multiple polymer chains.
