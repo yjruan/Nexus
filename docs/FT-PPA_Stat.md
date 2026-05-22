@@ -6,7 +6,7 @@
 
 - filename = file name
 
-- Keyword = *EnNum* or *EnPos* or *EnDis* or *EnID*
+- Keyword = *EnNum* or *EnPos* or *EnDis* or *EnID* or *ConLen* or *EnChain*
      
     - *EnNum* = Kink Number and Ent Number per chain
 
@@ -16,8 +16,10 @@
 
     - *EnID*  = Atom IDs of the two entangled chain segments
 
-    - *ConLen*= Contour length of primitive chain
-- Args = *format* or *NC*
+    - *ConLen* = Contour length of primitive chain
+
+    - *EnChain* = Kink Number and Ent Number in each chain
+- Args = *format* or *NC* or *dir* or *frac*
     - *format*  = data, dump, cfg
     - *NC*      = chain length
     - *dir*     = x,y,z
@@ -101,11 +103,21 @@ The columns in the output file are `EnID`, `Chain1`, `Atom`, `Atom`, `Chain2`, `
 ---
 `ConLen` will outputs the contour length of primitive chain.
 Here, the contour length is defined as the length of the path connecting the chain-end monomers and the centers of mass of the entanglements, where each entanglement is represented by a pair of kinks.
-The output file, named ConLen, with columns are `Num` and `ConLen1`.
+The output file, named `ConLen`, with columns are `Num` and `ConLen1`.
 | Column | Description |
 |---|---|
 | `Num` | File index |
 | `ConLen1` | contour length |
+
+
+---
+`EnChain` will outputs the kink number and entanglement number in each chain.
+The output file, named `EnChain`, with columns are `MolID`, `NKink`, and `NEnP`.
+| Column | Description |
+|---|---|
+| `MolID` | molecule ID |
+| `NKink` | kink number |
+| `NEnP` | entanglement number |
 
 ---
 `format` specify the format of the input file. Supported formats are LAMMPS data files (`data`), LAMMPS dump files (`dump`), and CFG files (`cfg`).
@@ -114,8 +126,7 @@ If your CFG file cannot be read correctly, please contact us with the file forma
 `NC` specify the polymer chain length. 
 If the input `dump` or `cfg` file does not contain `mol_ID` information, the system is assumed to be monodisperse, and chain identities are assigned based on `NC`.
 
-`dir`   = x,y,z
-    - *frac*    = bin number
+`dir` and `frac` are used in the `EnDis` function.
 
 ## Default
-format = dump, NC = 0
+format = dump, NC = 0, dir = y, frac = 20
